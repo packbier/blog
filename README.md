@@ -34,6 +34,14 @@ const text = await fetch(url).then((res) => res.text());
 console.log(text);
 ```
 
+## Fetch the built index
+
+The generated list of posts lives at `build/blog-index.json` after running `bun index.ts build`. You can fetch it directly from GitHub:
+
+```
+https://raw.githubusercontent.com/packbier/blog/refs/heads/main/build/blog-index.json
+```
+
 ## Frontmatter rules
 
 - `draft: true` entries are skipped.
