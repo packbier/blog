@@ -67,7 +67,7 @@ export function listBlogEntries(year?: number, month?: number): void {
 }
 
 export function buildIndex(): void {
-    const outputPath = path.join(BASE_DIR, "build", "entries.json");
+    const outputPath = path.join(BASE_DIR, "build", "blog-index.json");
     const posts = buildEntriesIndex(outputPath);
-    console.log(`INFO: Wrote ${posts.length} entries to build/entries.json`);
+    console.log(`INFO: Wrote ${posts.length} entries to build/blog-index.json`);
 }

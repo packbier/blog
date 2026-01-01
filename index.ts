@@ -1,20 +1,8 @@
 import yargs from "yargs"
 import { hideBin } from "yargs/helpers"
-import { buildIndex, createBlogEntry, createYearlyStructure, listBlogEntries } from "./scripts/create_structure";
+import { buildIndex, createBlogEntry, listBlogEntries } from "./scripts/create_structure";
 
 yargs(hideBin(process.argv))
-    .command(
-        "create-year <year>",
-        "Create directory structure for a given year",
-        (yargs) => yargs.positional("year", {
-            description: "The year for which to create the directory structure",
-            type: "number",
-            demandOption: true,
-        }),
-        (argv) => {
-            createYearlyStructure(argv.year);
-        }
-    )
     .command(
         "create-entry <title>",
         "Create a new blog entry for a specific date",
@@ -63,7 +51,7 @@ yargs(hideBin(process.argv))
     )
     .command(
         "build",
-        "Generate blog-index.json for client-side consumption",
+        "Generate build/blog-index.json for client-side consumption",
         () => { },
         () => {
             buildIndex();

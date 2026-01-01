@@ -162,7 +162,7 @@ export function lastBlogPosts(count: number): BlogPost[] {
     return collectBlogPosts().slice(0, Math.max(0, count));
 }
 
-export function buildEntriesIndex(outFile = path.join(BASE_DIR, "build", "entries.json")): BlogPost[] {
+export function buildEntriesIndex(outFile = path.join(BASE_DIR, "build", "blog-index.json")): BlogPost[] {
     const posts = collectBlogPosts();
     const targetDir = path.dirname(outFile);
     fs.mkdirSync(targetDir, { recursive: true });
